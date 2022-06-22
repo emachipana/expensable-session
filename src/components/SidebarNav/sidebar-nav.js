@@ -4,7 +4,6 @@ import { BsReceiptCutoff } from "react-icons/bs";
 import { GiTargeted } from "react-icons/gi";
 import { useAuth } from "../../context/auth-context";
 import { colors, fonts } from "../../styles";
-import LinkTo from "../LinkTo";
 import SidebarNavItem from "./sidebar-nav-item";
 
 const Wrapper = styled.div`
@@ -32,6 +31,15 @@ const Email = styled.p`
   line-height: 16px;
   color: ${colors.gray[500]};
   margin-bottom: 8px;
+`;
+
+const LinkTo = styled.a`
+  font-family: ${fonts.primary};
+  text-decoration: none;
+  font-size: 16px;
+  color: ${colors.pink[500]};
+  line-height: 24px;
+  cursor: pointer;
 `;
 
 function SidebarNav() {
@@ -73,7 +81,7 @@ function SidebarNav() {
       <div>
         <Name>{user.first_name} {user.last_name}</Name>
         <Email>{user.email}</Email>
-        <LinkTo to="/" onClick={handleLogout}>Logout</LinkTo>
+        <LinkTo onClick={handleLogout}>Logout</LinkTo>
       </div>
     </Wrapper>
   );

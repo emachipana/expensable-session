@@ -12,8 +12,8 @@ export const StyledLink = styled(Link)`
   cursor: pointer;
 `;
 
-function LinkTo({ children, to, onClick }) {
-  return <StyledLink to={to} onClick={onClick}>{children}</StyledLink>
+function LinkTo({ children, to }) {
+  return <StyledLink to={to}>{children}</StyledLink>
 }
 
 export default LinkTo;

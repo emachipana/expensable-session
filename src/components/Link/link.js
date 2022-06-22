@@ -9,8 +9,8 @@ export const LinkButton = styled.a`
   line-height: 24px;
 `;
 
-function Link({ onClickLink, name }) {
-  return <LinkButton onClick={onClickLink}>{name}</LinkButton>
+function Link({ onClickLink, children }) {
+  return <LinkButton onClick={onClickLink}>{children}</LinkButton>
 }
 
 export default Link;

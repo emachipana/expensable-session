@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 import { colors, fonts } from "../../styles";
 
-export const LinkButton = styled.a`
+
+export const StyledLink = styled(Link)`
   font-family: ${fonts.primary};
   text-decoration: none;
   font-size: 16px;
@@ -10,8 +12,8 @@ export const LinkButton = styled.a`
   cursor: pointer;
 `;
 
-function Link({ onClickLink, children }) {
-  return <LinkButton onClick={onClickLink}>{children}</LinkButton>
+function LinkTo({ children, to }) {
+  return <StyledLink to={to}>{children}</StyledLink>
 }
 
-export default Link;
+export default LinkTo;

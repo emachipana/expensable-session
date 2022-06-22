@@ -1,3 +1,3 @@
-import Link from "./link";
+import LinkTo from "./link";
 
-export default Link;
+export default LinkTo;

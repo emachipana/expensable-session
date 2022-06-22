@@ -7,6 +7,7 @@ export const LinkButton = styled.a`
   font-size: 16px;
   color: ${colors.pink[500]};
   line-height: 24px;
+  cursor: pointer;
 `;
 
 function Link({ onClickLink, children }) {

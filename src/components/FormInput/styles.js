@@ -32,4 +32,8 @@ export const Input = styled.input`
   border-radius: 6px;
   color: ${colors.gray[600]};
   padding: 8px 12px;
+  transition: .1s ease-in;
+  &:focus {
+    border: 1px solid ${colors.pink[500]};
+  }
 `;

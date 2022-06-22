@@ -3,12 +3,35 @@ import { BiCategoryAlt } from "react-icons/bi";
 import { BsReceiptCutoff } from "react-icons/bs";
 import { GiTargeted } from "react-icons/gi";
 import { useAuth } from "../../context/auth-context";
+import { colors, fonts } from "../../styles";
+import LinkTo from "../LinkTo";
 import SidebarNavItem from "./sidebar-nav-item";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 85vh;
   gap: 0.5rem;
+`;
+
+const Name = styled.h1`
+  font-family: ${fonts.secondary};
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: ${colors.gray[700]};
+`;
+
+const Email = styled.p`
+  font-family: ${fonts.secondary};
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: ${colors.gray[500]};
+  margin-bottom: 8px;
 `;
 
 function SidebarNav() {
@@ -42,13 +65,16 @@ function SidebarNav() {
 
   return (
     <Wrapper>
-      {navigation.map((nav) => (
-          <SidebarNavItem key={nav.name} {...nav} />
-      ))}
-      <hr />
-      <h3>{user.first_name} {user.last_name}</h3>
-      <p>{user.email}</p>
-      <button onClick={handleLogout}>Logout</button>
+      <div>
+        {navigation.map((nav) => (
+            <SidebarNavItem key={nav.name} {...nav} />
+        ))}
+      </div>
+      <div>
+        <Name>{user.first_name} {user.last_name}</Name>
+        <Email>{user.email}</Email>
+        <LinkTo to="/" onClick={handleLogout}>Logout</LinkTo>
+      </div>
     </Wrapper>
   );
 }

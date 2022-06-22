@@ -1,9 +1,8 @@
+// import LoginPage from "./pages/login-page";
+import SignUpPage from "./pages/signup-page";
+
 function App() {
-  return (
-    <div>
-      <h1>Init Project</h1>
-    </div>
-  );
+  return <SignUpPage />
 }
 
 export default App;

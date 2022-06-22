@@ -46,9 +46,9 @@ function AuthProvider({ children }) {
   if(loadig) return <p>Loading....</p>
 
   return (
-    <AuthContext value={{ user, login, logout, signup }}>
+    <AuthContext.Provider value={{ user, login, logout, signup }}>
       { children }
-    </AuthContext>
+    </AuthContext.Provider>
   );
 };
 

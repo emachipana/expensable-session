@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { BiCategoryAlt } from "react-icons/bi";
 import { BsReceiptCutoff } from "react-icons/bs";
 import { GiTargeted } from "react-icons/gi";
+import { useAuth } from "../../context/auth-context";
 import SidebarNavItem from "./sidebar-nav-item";
 
 const Wrapper = styled.div`
@@ -11,6 +12,16 @@ const Wrapper = styled.div`
 `;
 
 function SidebarNav() {
+  const { logout, user } = useAuth();
+
+  async function handleLogout() {
+    try {
+      await logout()
+    }catch(e) {
+      console.error(e);  
+    }
+  }
+
   const navigation = [
     {
         name: "Categories",
@@ -34,6 +45,10 @@ function SidebarNav() {
       {navigation.map((nav) => (
           <SidebarNavItem key={nav.name} {...nav} />
       ))}
+      <hr />
+      <h3>{user.first_name} {user.last_name}</h3>
+      <p>{user.email}</p>
+      <button onClick={handleLogout}>Logout</button>
     </Wrapper>
   );
 }

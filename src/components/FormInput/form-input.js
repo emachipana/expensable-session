@@ -1,14 +1,15 @@
 import * as Style from "./styles";
 
 function FormInput({ label, type = "text", placeholder }) {
+  const labelParsed = label.replace(/ /g, "_");
   return(
     <Style.InputContainer>
-      <Style.Label htmlFor={label}>{label}</Style.Label>
+      <Style.Label htmlFor={labelParsed}>{label}</Style.Label>
       <Style.Input 
         type={type}
-        id={label}
+        id={labelParsed}
         placeholder={placeholder}
-        name={label}  
+        name={labelParsed}  
       />
     </Style.InputContainer>
   );

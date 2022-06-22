@@ -3,12 +3,13 @@ import { colors, fonts } from "../styles";
 
 export const Container = styled.div`
   max-width: 768px;
-  margin: 0 auto;
+  margin: auto;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
-  text-align: center;
 `;
 
 export const Form = styled.form`

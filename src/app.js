@@ -1,9 +1,7 @@
+import LoginPage from "./pages/login-page";
+
 function App() {
-  return (
-    <div>
-      <h1>Init Project</h1>
-    </div>
-  );
+  return <LoginPage />
 }
 
 export default App;

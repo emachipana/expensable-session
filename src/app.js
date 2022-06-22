@@ -1,8 +1,11 @@
-// import LoginPage from "./pages/login-page";
-import SignUpPage from "./pages/signup-page";
+import AuthenticatedApp from "./AuthenticatedApp";
+import { useAuth } from "./context/auth-context";
+import UnauthenticatedApp from "./UnauthenticatedApp";
 
 function App() {
-  return <SignUpPage />
+  const { user } = useAuth();
+
+  return user ? <AuthenticatedApp /> : <UnauthenticatedApp />
 }
 
 export default App;

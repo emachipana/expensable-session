@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 import FormInput from "../components/FormInput";
-import Link from "../components/Link";
+import LinkTo from "../components/LinkTo";
 import * as Style from "./styles";
 
 function SignUpPage() {
@@ -15,7 +15,7 @@ function SignUpPage() {
         <FormInput label="phone" type="number" placeholder="984601113" />
         <Button type="primary" style={{width: "100%", backgroundColor: "#F490B1"}}>SIGN UP</Button>
       </Style.Form>
-      <Link>Login</Link>
+      <LinkTo to="/login">Login</LinkTo>
     </Style.Container>
   );
 }

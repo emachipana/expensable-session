@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 import FormInput from "../components/FormInput";
-import Link from "../components/Link";
+import LinkTo from "../components/LinkTo";
 import * as Style from "./styles";
 
 function LoginPage() {
@@ -12,7 +12,7 @@ function LoginPage() {
         <FormInput label="password" type="password" placeholder="********" />
         <Button type="primary" style={{width: "100%", backgroundColor: "#F490B1"}}>LOGIN</Button>
       </Style.Form>
-      <Link>Sign Up</Link>
+      <LinkTo to="/signup">Sign Up</LinkTo>
     </Style.Container>
   );
 }
